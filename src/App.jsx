@@ -3,6 +3,9 @@ import About from "./components/About"
 import Content from "./components/Content"
 import Project from "./components/Project";
 import Login from "./components/Login"
+import OnChangeonSubmit from "./components/OnChangeonSubmit";
+import UsestateObject from "./components/UsestateObject"
+import Timer from "./components/Timer"
 import { useState } from "react";
 
 function App(){
@@ -10,6 +13,7 @@ function App(){
   let age = 21;
   const [count,setCount]=useState(0);
   const [login, setLogin]=useState(false);
+  const [state,setState]=useState(false);
 
 
   return (
@@ -25,6 +29,14 @@ function App(){
   instalizing const [name,setNmae]= useState(intial value)
   updating setName(new value) */}
   
+  <OnChangeonSubmit/>
+  <UsestateObject/>
+   <button onClick={()=>{
+            setState(!state)
+        }}>{state ? "stop Timer" : "start timer"}</button>
+        {state && <Timer/>}
+        
+
 
 
 </div>
