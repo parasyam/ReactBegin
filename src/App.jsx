@@ -6,6 +6,7 @@ import Login from "./components/Login"
 import OnChangeonSubmit from "./components/OnChangeonSubmit";
 import UsestateObject from "./components/UsestateObject"
 import Timer from "./components/Timer"
+import AddDeleteArray from "./components/AddDeleteArray";
 import { useState } from "react";
 
 function App(){
@@ -35,9 +36,8 @@ function App(){
             setState(!state)
         }}>{state ? "stop Timer" : "start timer"}</button>
         {state && <Timer/>}
-        
-
-
+      
+      <AddDeleteArray/>
 
 </div>
   );
