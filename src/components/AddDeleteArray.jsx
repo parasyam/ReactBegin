@@ -19,9 +19,9 @@ const AddDeleteArray = ()=>
     }
     return <div>
         {fruits.map((fruit,index)=>(
-            <div>
+            <div key={index}>
 
-            <p key={index}>{fruit}</p>
+            <p>{fruit}</p>
             <button onClick={()=>handleDelete(index)}>Delete</button>
             </div>
         ))}

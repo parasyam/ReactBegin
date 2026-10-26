@@ -16,7 +16,7 @@ const OnChangeonSubmit= ()=>
     }
 
     
-    return <dev>
+    return <div>
         <form onSubmit={handleSubmit}>
             <input onChange={typing} placeholder="enter name here" ></input>
             <button type="submit">submit</button>
@@ -25,7 +25,7 @@ const OnChangeonSubmit= ()=>
         {submit&&<p>name: {name}</p>}
 
 
-    </dev>
+    </div>
 }
 
 export default OnChangeonSubmit;
