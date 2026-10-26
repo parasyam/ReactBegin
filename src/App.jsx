@@ -7,6 +7,7 @@ import OnChangeonSubmit from "./components/OnChangeonSubmit";
 import UsestateObject from "./components/UsestateObject"
 import Timer from "./components/Timer"
 import AddDeleteArray from "./components/AddDeleteArray";
+import Hook from "./components/hook";
 import { useState } from "react";
 
 function App(){
@@ -38,6 +39,8 @@ function App(){
         {state && <Timer/>}
       
       <AddDeleteArray/>
+      <Hook/>
+
 
 </div>
   );
