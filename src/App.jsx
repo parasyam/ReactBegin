@@ -4,23 +4,47 @@ import OnChangeonSubmit from "./components/OnChangeonSubmit";
 import UsestateObject from "./components/UsestateObject"
 import Timer from "./components/Timer"
 import AddDeleteArray from "./components/AddDeleteArray";
-import Hook from "./components/hook";
+import Hook from "./components/Hook";
 import { useState } from "react";
 import {userContext} from "./components/UserContext";
 import Api from "./components/Api";
+import {createBrowserRouter , RouterProvider} from 'react-router-dom';
+import About from "./components/About";
+import Content from "./components/Content";
+
+
 
 function App(){
+
   let name ="syam";
   let name1 ="bhardwaj";
   let age = 21;
   const [count,setCount]=useState(0);
   const [login, setLogin]=useState(false);
   const [state,setState]=useState(false);
+const router =createBrowserRouter([
+  {
+    path : "/",
+    element :<Home name={name} count={count} setcount={setCount}/>
+
+  },
+  {
+    path : "/about",
+    element:<About/>
+  },
+{
+  path:"/content",
+  element:<Content/>
+},
+]);
+
 
 
   return (
- <userContext.Provider value={name1}>
-  <Home name={name} count={count} setcount={setCount}/>
+
+    <userContext.Provider value={name1}>
+   
+  <RouterProvider router={router}/>
   <Login setLogin={setLogin} login={login}/>
   <p>{name}</p>
 
