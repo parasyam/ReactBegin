@@ -11,6 +11,7 @@ import Api from "./components/Api";
 import {createBrowserRouter , RouterProvider} from 'react-router-dom';
 import About from "./components/About";
 import Content from "./components/Content";
+import Navbar  from "./components/Navbar";
 
 
 
@@ -25,16 +26,28 @@ function App(){
 const router =createBrowserRouter([
   {
     path : "/",
-    element :<Home name={name} count={count} setcount={setCount}/>
+    element :
+    <div>
+          <Navbar/>
+          <Home name={name} count={count} setcount={setCount}/>
 
+    </div>
   },
   {
     path : "/about",
-    element:<About/>
+    element: <div>
+          <Navbar/>
+          <About/>
+
+    </div>
   },
 {
   path:"/content",
-  element:<Content/>
+  element: <div>
+          <Navbar/>
+          <Content/>
+
+    </div>
 },
 ]);
 
@@ -43,6 +56,7 @@ const router =createBrowserRouter([
   return (
 
     <userContext.Provider value={name1}>
+  
    
   <RouterProvider router={router}/>
   <Login setLogin={setLogin} login={login}/>
@@ -71,6 +85,7 @@ so that multiple child components can share the same data */}
 
  {/* Context api is used to store data globally and access it directly in any componeent
  without passing props manually  */}
+ {/* li=nk dont l=know wheather we are in that , nav link used to know wherather it isavtive or not , navigate  */}
 
 
 
